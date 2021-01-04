@@ -1,3 +1,4 @@
+import EmployeeData from "./Components/EmployeeData";
 import SearchBar from "./Components/SearchBar";
 
 function DirectoryTable() {
@@ -6,6 +7,8 @@ function DirectoryTable() {
             <h1>Search the Employee Directory</h1>
 
             <SearchBar />
+
+            <EmployeeData />
         </div>
     );
 }
