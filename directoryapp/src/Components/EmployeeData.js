@@ -17,15 +17,23 @@ class EmployeeData extends React.Component {
                 const employees = res.data
                 self.setState({ employees });
                 console.log(employees);
+                console.log("Employee List");
+                console.log(employees.results[0].name);
+            
             });
+        
+            
     }
+
+
 
     render() {
         return (
             <div>
-
+                <ul>
+                    {/* <li>{employees}</li> */}
+                </ul>
             </div>
-
         );
     }
 }
