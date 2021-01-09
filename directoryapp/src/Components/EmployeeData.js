@@ -12,13 +12,14 @@ class EmployeeData extends React.Component {
     // This reaches out to the API and returns an object of 100 employees which is then placed in the employees array
     componentDidMount() {
         var self = this;
-        axios.get('https://randomuser.me/api/?results=100&nat=US')
+        axios.get('https://randomuser.me/api/?results=5&nat=US')
             .then(function (res) {
                 const employees = res.data
                 self.setState({ employees: employees.results });
+                console.log("Data from API call")
                 console.log(employees);
-                console.log("Employee List");
-                console.log(employees.results[0].name);
+                console.log("First Employee On List");
+                console.log(employees.results[0].name.first);
 
             });
 
@@ -33,9 +34,11 @@ class EmployeeData extends React.Component {
                 <ul>
                     {
                         this.state.employees.map(employee => {
+                            console.log("render function in employeedata component");
+                            console.log(employee);
                             return (
                                 // <li>{employee.name.first} {employee.name.last} {employee.cell} {employee.email}</li>
-                                <li>{employee.email} || {employee.cell}</li>
+                                <li> {employee.gender} || {employee.email} || {employee.cell} || </li>
                             )
                         })
                     }

@@ -10,6 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <DirectoryTable />
   </React.StrictMode>,
+
+  // <App />,
   document.getElementById('root')
 );
 

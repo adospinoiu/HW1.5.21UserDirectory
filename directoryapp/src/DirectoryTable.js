@@ -1,5 +1,7 @@
+import { BasicTable } from "./Components/BasicTable";
 import EmployeeData from "./Components/EmployeeData";
 import SearchBar from "./Components/SearchBar";
+
 
 function DirectoryTable() {
     return (
@@ -9,6 +11,8 @@ function DirectoryTable() {
             <SearchBar />
 
             <EmployeeData />
+
+            <BasicTable />
         </div>
     );
 }
