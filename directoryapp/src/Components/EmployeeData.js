@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { BasicTable } from "./BasicTable";
 
 
 
@@ -12,14 +13,16 @@ class EmployeeData extends React.Component {
     // This reaches out to the API and returns an object of 100 employees which is then placed in the employees array
     componentDidMount() {
         var self = this;
-        axios.get('https://randomuser.me/api/?results=5&nat=US')
+        axios.get('https://randomuser.me/api/?inc=name,cell,email,id&results=10&nat=US')
             .then(function (res) {
+
+
                 const employees = res.data
                 self.setState({ employees: employees.results });
                 console.log("Data from API call")
                 console.log(employees);
-                console.log("First Employee On List");
-                console.log(employees.results[0].name.first);
+                // console.log("First Employee On List");
+                // console.log(employees.results[0].name.first);
 
             });
 
@@ -44,27 +47,8 @@ class EmployeeData extends React.Component {
                     }
                 </ul>
 
+            <BasicTable employees={this.state.employees}/>
 
-                {/* {this.state.employees.map(employee => {
-                    return (
-                        <table>
-                            
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Cell Number</th>
-                                <th>Email Address</th>
-                            </tr>
-                            <tr>
-                                <td>{employee.name.first}</td>
-                                <td>{employee.name.last}</td>
-                                <td>{employee.cell}</td>
-                                <td>{employee.email}</td>
-                            </tr>
-                        </table>
-                    )
-                })
-                } */}
             </div>
         );
     }

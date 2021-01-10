@@ -1,4 +1,4 @@
-import { BasicTable } from "./Components/BasicTable";
+// import { BasicTable } from "./Components/BasicTable";
 import EmployeeData from "./Components/EmployeeData";
 import SearchBar from "./Components/SearchBar";
 
@@ -12,7 +12,7 @@ function DirectoryTable() {
 
             <EmployeeData />
 
-            <BasicTable />
+            {/* <BasicTable /> */}
         </div>
     );
 }
